@@ -18,5 +18,5 @@ int main() {
 
     printf("The sum of the series is: %.2lf\n", sum);
 
-    return 0;
+    return 0; 
 }
