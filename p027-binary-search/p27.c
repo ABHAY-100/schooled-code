@@ -1,12 +1,12 @@
-// C program for binary search
+// C program for binary search1
 #include <stdio.h>
 int binarySearch(int array[], int left, int right, int key){
-    while(left<right){
+    while(left<=right){
         int mid = left + (right-left)/2;
         if(array[mid]==key){
             return mid;
         }
-        if(array[mid]<left) left = mid+1;
+        if(array[mid]<key) left = mid+1;
         else right = mid-1;
     }
     return -1;
@@ -23,8 +23,8 @@ void main(){
     printf("Enter the element to search: ");
     scanf("%d", &key);
     int result = binarySearch(array, 0, n-1, key);
-    if(result != -1){
-        printf("Element is found at index %d", result);
+    if(result == -1){
+        printf("Element not found!!");
     }
-    else printf("Element not found!!");
+    else printf("Element is found at index %d", result);
 }
