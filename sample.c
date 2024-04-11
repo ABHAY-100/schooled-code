@@ -1,15 +1,11 @@
 #include <stdio.h>
-void main(){
-    int n;
-    printf("Enter the size: ");
-    scanf("%d", &n);
-    int array[n];
-    printf("Enter the array elements: ");
-    for(int i=0; i<n; i++){
-        scanf("%d", &array[i]);
-    }
-    printf("\nThe array elements are: \n");
-    for(int i=n-1; i>=0; i--){
-        printf("Element %d : %d\n", i+1, array[i]);
-    }
+#include <ctype.h>
+
+int main() {
+    char str = 'G';
+    // Convert a single character to uppercase
+    char uppercase_str = tolower(str);
+    // Print the result as a character
+    printf("%c\n", uppercase_str);
+    return 0;
 }
