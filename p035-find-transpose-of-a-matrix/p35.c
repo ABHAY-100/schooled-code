@@ -19,7 +19,7 @@ void main(){
     printf("--------------------------------\n\n");
     printf("\nThe entered matrix: \n");
     printf("--------------------------------\n");
-    for(int i=0; i<column; i++){
+    for(int i=0; i<row; i++){
         for(int j=0; j<column; j++){
             printf("%d ", matrixA[i][j]);
         }
