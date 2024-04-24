@@ -34,11 +34,8 @@ void main(){
     
     // matrix addition
     for(int i=0; i<r1; i++){
-        for(int j=0; j<c2; j++){
-            C[i][j]=0;
-            for(int k=0; k<r2; k++){
-                C[i][j] = A[i][j] + B[j][k];
-            }
+        for(int j=0; j<c1; j++){
+            C[i][j] = A[i][j] + B[i][j];
         }
     }
 
