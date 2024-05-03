@@ -25,9 +25,9 @@ void main(){
 
     printf("\nEntered Matrix : ");
     printf("\n-------------- ");
-    printf("\nThe Matrix 1 : ");
+    printf("\nThe Matrix 1 : \n");
     printMatrix(matrix1, row1, col1);
-    printf("\nThe Matrix 2 : ");
+    printf("\nThe Matrix 2 : \n");
     printMatrix(matrix2, row2, col2);
     printf("\n");
 
@@ -48,7 +48,7 @@ void main(){
                     }
                     else{
                         addMatrices(matrix1, matrix2, result, row1, col1);
-                        printf("Sum of the matrices:\n");
+                        printf("\nSum of the matrices:\n");
                         printMatrix(result, row1, col1);
                     }
                     break;
@@ -59,16 +59,18 @@ void main(){
                     }
                     else{
                         multiplyMatrices(matrix1, matrix2, result, row1, col2, row2);
-                        printf("Product of the matrices:\n");
+                        printf("\nProduct of the matrices:\n");
                         printMatrix(result, row1, col2);
                     }
                     break;
             case 3 : 
-                    printf("Transpose of matrix 1:\n");
+                    printf("\nTranspose of matrix 1:\n");
                     transposeMatrix(matrix1, row1, col1);
+                    printf("\nTranspose of matrix 2:\n");
+                    transposeMatrix(matrix2, row2, col2);
                     break;
             case 4 : 
-                    printf("Exiting...\n");
+                    printf("\nExiting...\n");
                     break;
             default : 
                     printf("Invalid choice. Please enter a valid choice.\n");
