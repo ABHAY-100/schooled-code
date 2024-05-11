@@ -9,7 +9,7 @@ void main(){
     scanf("%d%d", &r2, &c2);
     int A[r1][c1], B[r2][c2];
 
-    // condition check for matrix multiplication
+    // condition check
     if(r1!=r1 || c1!=c2){
         printf("\nTry Again! Matrix cannot be added...\n");
         return;

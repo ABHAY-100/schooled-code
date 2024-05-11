@@ -16,7 +16,7 @@ void main(){
     printf("Enter the number of rows and columns of Matrix 2 : ");
     scanf("%d%d", &row2, &col2);
 
-    matrix1[row1][col1], matrix1[row2][col2];
+    matrix1[row1][col1], matrix2[row2][col2];
 
     printf("\nEnter the elements of the matrix 1 :\n");
     readMatrix(matrix1, row1, col1);
