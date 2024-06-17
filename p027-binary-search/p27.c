@@ -1,4 +1,4 @@
-// C program for binary search1
+// C program for binary search
 #include <stdio.h>
 int binarySearch(int array[], int left, int right, int key){
     while(left<=right){
