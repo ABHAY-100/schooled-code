@@ -37,7 +37,7 @@ void main(){
         for(int j=0; j<c2; j++){
             C[i][j]=0;
             for(int k=0; k<r2; k++){
-                C[i][j] += A[i][j] * B[j][k];
+                C[i][j] += A[i][k] * B[k][j];
             }
         }
     }
