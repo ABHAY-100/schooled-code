@@ -39,7 +39,7 @@ void printData(struct employeesData *emp, int n){
 }
 void sortData(struct employeesData *emp, int n){
     struct employeesData temp;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n-1; i++){
         for(int j=0; j<n-i-1; j++){
             if(emp[j].tsalary<emp[j+1].tsalary){
                 temp = emp[j+1];
