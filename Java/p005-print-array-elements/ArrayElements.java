@@ -3,7 +3,7 @@ class ArrayElements {
     public static void main(String[] args) {
         int[] array = { 1, 2, 3, 4, 5 };
 
-        System.err.print("Array elements: ");
+        System.out.print("Array elements: ");
         for(int ele : array) {
             System.out.print(" " + ele);
         }
