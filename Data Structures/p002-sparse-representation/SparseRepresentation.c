@@ -32,19 +32,67 @@ void displaySparseMatrix(struct SparseMatrix sparse[], int size) {
     }
 }
 
+int addSparseMatrices(struct SparseMatrix sparse1[], int size1, struct SparseMatrix sparse2[], int size2, struct SparseMatrix result[]) {
+    int i = 0, j = 0, k = 0;
+    while (i < size1 && j < size2) {
+        if (sparse1[i].row == sparse2[j].row && sparse1[i].col == sparse2[j].col) {
+            result[k].row = sparse1[i].row;
+            result[k].col = sparse1[i].col;
+            result[k].value = sparse1[i].value + sparse2[j].value;
+            i++;
+            j++;
+            k++;
+        } else if (sparse1[i].row < sparse2[j].row || (sparse1[i].row == sparse2[j].row && sparse1[i].col < sparse2[j].col)) {
+            result[k] = sparse1[i];
+            i++;
+            k++;
+        } else {
+            result[k] = sparse2[j];
+            j++;
+            k++;
+        }
+    }
+
+    while (i < size1) {
+        result[k] = sparse1[i];
+        i++;
+        k++;
+    }
+
+    while (j < size2) {
+        result[k] = sparse2[j];
+        j++;
+        k++;
+    }
+
+    return k;
+}
+
 int main() {
     int rows, cols;
-    struct SparseMatrix sparse[MAX];
+    struct SparseMatrix sparse1[MAX], sparse2[MAX], result[MAX];
 
     printf("Enter the number of rows: ");
     scanf("%d", &rows);
     printf("Enter the number of columns: ");
     scanf("%d", &cols);
 
-    int size = createSparseMatrix(rows, cols, sparse);
+    printf("Enter elements for the first matrix:\n");
+    int size1 = createSparseMatrix(rows, cols, sparse1);
 
-    printf("\nSparse Matrix Representation:\n");
-    displaySparseMatrix(sparse, size);
+    printf("Enter elements for the second matrix:\n");
+    int size2 = createSparseMatrix(rows, cols, sparse2);
+
+    printf("\nFirst Sparse Matrix Representation:\n");
+    displaySparseMatrix(sparse1, size1);
+
+    printf("\nSecond Sparse Matrix Representation:\n");
+    displaySparseMatrix(sparse2, size2);
+
+    int size3 = addSparseMatrices(sparse1, size1, sparse2, size2, result);
+
+    printf("\nResultant Sparse Matrix Representation (after addition):\n");
+    displaySparseMatrix(result, size3);
 
     return 0;
 }
