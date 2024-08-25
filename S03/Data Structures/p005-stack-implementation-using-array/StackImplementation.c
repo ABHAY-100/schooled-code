@@ -18,8 +18,18 @@ void pop() {
     }
 }
 void display() {
+    if (top == -1) {
+        printf("Stack Empty!");
+    }
     for (int i=top; i>=0; i--) {
         printf("%d ", Stack[i]);
+    }
+}
+void peek() {
+    if (top == -1) {
+        printf("Stack Empty!");
+    } else {
+        printf("%d", Stack[top]);
     }
 }
 void main()
@@ -30,8 +40,9 @@ void main()
         printf("\n\nMenu: \n");
         printf("1. Add an element\n");
         printf("2. Delete an element\n");
-        printf("3. Display stack\n");
-        printf("4. Exit\n");
+        printf("3. Print peek element\n");
+        printf("4. Display stack\n");
+        printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -46,15 +57,19 @@ void main()
             pop();
             break;
         case 3:
+            printf("Peek Element: ");
+            peek();
+            break;
+        case 4:
             printf("Stack: ");
             display();
             break;
-        case 4:
+        case 5:
             printf("Exiting...");
             break;
         default:
             printf("Something went wrong! Try Again.");
             break;
         }
-    } while (choice != 4);
+    } while (choice != 5);
 }
