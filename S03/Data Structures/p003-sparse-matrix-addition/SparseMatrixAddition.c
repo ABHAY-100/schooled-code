@@ -1,33 +1,33 @@
 #include <stdio.h>
 
-int createSparseMatrix(int sparse[][3], int row, int col)
+int createSparseMatrix(int sparse[][3])
 {
     int val;
-    int i = 0, j = 0, k = 1;
-    for (int i = 0; i < row; i++)
+    int i = 0, j = 0, k = 0;
+    for (int i = 0; i < sparse[0][0]; i++)
     {
-        for (int j = 0; j < col; j++)
+        for (int j = 0; j < sparse[0][1]; j++)
         {
             printf("Enter the value at (%d, %d): ", i, j);
             scanf("%d", &val);
             if (val != 0)
-            {
+            {   
+                k++;
                 sparse[k][0] = i;
                 sparse[k][1] = j;
                 sparse[k][2] = val;
-                k++;
             }
         }
     }
-    return k;
+    sparse[0][2] = k;
 }
 
-int addSparseMatrix(int sparse1[][3], int sparse2[][3], int t1, int t2, int sparse3[][3])
+int addSparseMatrix(int sparse1[][3], int sparse2[][3], int sparse3[][3])
 {
     int i = 1, j = 1, k = 1;
     sparse3[0][0] = sparse1[0][0];
     sparse3[0][1] = sparse1[0][1];
-    while (i < t1 && j < t2)
+    while (i <= sparse1[0][2] && j <= sparse2[0][2])
     {
         if (sparse1[i][0] < sparse2[j][0] || sparse1[i][0] == sparse2[j][0] && sparse1[i][1] < sparse2[j][1])
         {
@@ -53,7 +53,7 @@ int addSparseMatrix(int sparse1[][3], int sparse2[][3], int t1, int t2, int spar
         }
         k++;
     }
-    while (i < t1)
+    while (i <= sparse1[0][2])
     {
         sparse3[k][0] = sparse1[i][0];
         sparse3[k][1] = sparse1[i][1];
@@ -61,7 +61,7 @@ int addSparseMatrix(int sparse1[][3], int sparse2[][3], int t1, int t2, int spar
         i++;
         k++;
     }
-    while (j < t2)
+    while (j <= sparse2[0][2])
     {
         sparse3[k][0] = sparse2[j][0];
         sparse3[k][1] = sparse2[j][1];
@@ -69,14 +69,13 @@ int addSparseMatrix(int sparse1[][3], int sparse2[][3], int t1, int t2, int spar
         j++;
         k++;
     }
-    sparse3[0][2] = k - 1;
-    return k;
+    sparse3[0][2] = k-1;
 }
 
-void DisplaySparse(int sparse[][3], int k)
+void DisplaySparse(int sparse[][3])
 {
     printf("Sparse Representation: \n");
-    for (int i = 0; i < k; i++)
+    for (int i = 0; i <= sparse[0][2]; i++)
     {
         printf("%d %d %d \n", sparse[i][0], sparse[i][1], sparse[i][2]);
     }
@@ -84,28 +83,21 @@ void DisplaySparse(int sparse[][3], int k)
 
 void main()
 {
-    int rows1, cols1, rows2, cols2, t1, t2, t3;
     int sparse1[20][3], sparse2[20][3], sparse3[40][3];
     printf("Enter the number of rows and columns of matrix 1: ");
-    scanf("%d%d", &rows1, &cols1);
+    scanf("%d%d", &sparse1[0][0], &sparse1[0][1]);
     printf("Enter the number of rows and columns of matrix 2: ");
-    scanf("%d%d", &rows2, &cols2);
-    if (rows1 != rows2 || cols1 != cols2)
+    scanf("%d%d", &sparse2[0][0], &sparse2[0][1]);
+    if (sparse1[0][0] != sparse2[0][0] || sparse1[0][1] != sparse2[0][1])
     {
         printf("The matix cannot be added!..\n");
         return;
     }
-    sparse1[0][0] = rows1;
-    sparse1[0][1] = cols1;
-    t1 = createSparseMatrix(sparse1, rows1, cols1);
-    sparse1[0][2] = t1 - 1;
-    DisplaySparse(sparse1, t1);
-    sparse2[0][0] = rows2;
-    sparse2[0][1] = cols2;
-    t2 = createSparseMatrix(sparse2, rows2, cols2);
-    sparse2[0][2] = t2 - 1;
-    DisplaySparse(sparse2, t2);
+    createSparseMatrix(sparse1);
+    DisplaySparse(sparse1);
+    createSparseMatrix(sparse2);
+    DisplaySparse(sparse2);
 
-    t3 = addSparseMatrix(sparse1, sparse2, t1, t2, sparse3);
-    DisplaySparse(sparse3, t3);
+    addSparseMatrix(sparse1, sparse2, sparse3);
+    DisplaySparse(sparse3);
 }

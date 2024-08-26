@@ -1,30 +1,30 @@
 #include <stdio.h>
 
-int createSparseMatrix(int sparse[][3], int row, int col)
+void createSparseMatrix(int sparse[][3])
 {
 	int val;
-	int i = 0, j = 0, k = 1;
-	for (int i = 0; i < row; i++)
+	int i = 0, j = 0, k = 0;
+	for (i = 0; i < sparse[0][0]; i++)
 	{
-		for (int j = 0; j < col; j++)
+		for (j = 0; j < sparse[0][1]; j++)
 		{
 			printf("Enter the value at (%d, %d): ", i, j);
 			scanf("%d", &val);
 			if (val != 0)
 			{
+				k++;
 				sparse[k][0] = i;
 				sparse[k][1] = j;
 				sparse[k][2] = val;
-				k++;
 			}
 		}
 	}
-	return k;
+	sparse[0][2] = k;
 }
 
-void DisplaySparse(int sparse[][3], int k)
+void DisplaySparse(int sparse[][3])
 {
-	for (int i = 0; i < k; i++)
+	for (int i = 0; i <= sparse[0][2]; i++)
 	{
 		printf("%d %d %d \n", sparse[i][0], sparse[i][1], sparse[i][2]);
 	}
@@ -32,15 +32,11 @@ void DisplaySparse(int sparse[][3], int k)
 
 void main()
 {
-	int rows, cols, size;
 	int sparse[20][3];
 	printf("Enter the number of rows: ");
-	scanf("%d", &rows);
+	scanf("%d", &sparse[0][0]);
 	printf("Enter the number of columns: ");
-	scanf("%d", &cols);
-	sparse[0][0] = rows;
-	sparse[0][1] = cols;
-	size = createSparseMatrix(sparse, rows, cols);
-	sparse[0][2] = size - 1;
-	DisplaySparse(sparse, size);
+	scanf("%d", &sparse[0][1]);
+	createSparseMatrix(sparse);
+	DisplaySparse(sparse);
 }
