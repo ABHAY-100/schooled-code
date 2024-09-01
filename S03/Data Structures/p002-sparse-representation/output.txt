@@ -1,0 +1,12 @@
+Enter the number of rows: 2
+Enter the number of columns: 3
+Enter the value at (0, 0): 1
+Enter the value at (0, 1): 0
+Enter the value at (0, 2): 0
+Enter the value at (1, 0): 2
+Enter the value at (1, 1): 0
+Enter the value at (1, 2): 3
+2 3 3 
+0 0 1 
+1 0 2 
+1 2 3
