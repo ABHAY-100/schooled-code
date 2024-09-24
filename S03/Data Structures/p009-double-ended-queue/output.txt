@@ -1,0 +1,83 @@
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 1
+Insert Element at Front: 1
+
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 2
+Insert Element at Rear: 2
+
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 1
+Insert Element at Front: 3
+
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 2
+Insert Element at Rear: 4
+
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 5
+Deque: 3 1 2 4 
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 3
+Delete Element from Front: 3
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 4
+Delete Element from Rear: 4
+
+Menu: 
+1. Insert at front
+2. Insert at rear
+3. Delete from front
+4. Delete from rear
+5. Display deque
+6. Exit
+Enter your choice: 6
+Exiting...

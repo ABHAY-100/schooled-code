@@ -1,0 +1,151 @@
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 1
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 2
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 3
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 4
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 5
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 6
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 7
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 1
+Push Element: 8
+Queue Full!
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 3
+Queue: 1 2 3 4 5 6 7 
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 1
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 2
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 3
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 4
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 5
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 6
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: 7
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 2
+Pop Element: Queue Empty!
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Display queue
+4. Exit
+Enter your choice: 4
+Exiting...

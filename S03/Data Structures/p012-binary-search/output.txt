@@ -1,0 +1,9 @@
+Enter the no. of array elements: 5
+Enter the array elements: 1
+2
+3
+4
+5
+Enter the key: 3
+
+Element found at Index 2

@@ -15,9 +15,10 @@ void binarySearch(int array[]) {
     int left=0, right=size-1;
     int mid;
     while (left <= right) {
-        mid = left + (right-left)/2;
+        mid = (right+left)/2;
         if (array[mid] == key) {
             printf("\nElement found at Index %d\n", mid);
+            return;
         }
         else if (array[mid] > key) right = mid-1;
         else left = mid+1;

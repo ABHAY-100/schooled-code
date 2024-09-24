@@ -1,0 +1,178 @@
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 1
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 2
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 3
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 4
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 5
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 6
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 7
+
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 1
+Push Element: 8
+Stack Overflow!
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 4
+Stack: 7 6 5 4 3 2 1 
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 3
+Peek Element: 7
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 7
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 6
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 5
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 4
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 3
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 2
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: 1
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 2
+Pop Element: Stack Underflow!
+
+Menu: 
+1. Add an element
+2. Delete an element
+3. Print peek element
+4. Display stack
+5. Exit
+Enter your choice: 5
+Exiting...
