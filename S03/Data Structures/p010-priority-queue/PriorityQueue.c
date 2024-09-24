@@ -9,19 +9,16 @@ struct PQueue
     int priority;
 } PQ[SIZE];
 
-// Helper function to check if the queue is full
 int isFull()
 {
     return (rear == SIZE - 1);
 }
 
-// Helper function to check if the queue is empty
 int isEmpty()
 {
     return (front == -1);
 }
 
-// Optimized enqueue function
 void enqueue(int data, int priority)
 {
     if (isFull())
@@ -39,8 +36,7 @@ void enqueue(int data, int priority)
     else
     {
         int i;
-        // Shifting elements to make space for the new one
-        for (i = rear; i >= front && PQ[i].priority <= priority; i--)
+        for (i = rear; i >= front && PQ[i].priority >= priority; i--)
         {
             PQ[i + 1] = PQ[i];
         }
@@ -50,7 +46,6 @@ void enqueue(int data, int priority)
     }
 }
 
-// Optimized dequeue function
 void dequeue()
 {
     if (isEmpty())
@@ -59,7 +54,6 @@ void dequeue()
         return;
     }
 
-    // If only one element is left, reset the queue
     if (front == rear)
     {
         front = rear = -1;
@@ -70,7 +64,6 @@ void dequeue()
     }
 }
 
-// Display the queue
 void display()
 {
     if (isEmpty())

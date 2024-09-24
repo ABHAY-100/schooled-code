@@ -17,15 +17,15 @@ Enter data and priority: 2
 3. Display
 4. Exit
 Enter your option: 1
-Enter data and priority: 4
-4
+Enter data and priority: 3
+3
 1. Enqueue
 2. Dequeue
 3. Display
 4. Exit
 Enter your option: 1
-Enter data and priority: 3
-3
+Enter data and priority: 4
+4
 1. Enqueue
 2. Dequeue
 3. Display
@@ -61,13 +61,13 @@ Queue Full!
 4. Exit
 Enter your option: 3
 Priority Queue:
-7 (7)
-6 (6)
-5 (5)
-4 (4)
-3 (3)
-2 (2)
 1 (1)
+2 (2)
+3 (3)
+4 (4)
+5 (5)
+6 (6)
+7 (7)
 1. Enqueue
 2. Dequeue
 3. Display
@@ -78,6 +78,17 @@ Enter your option: 2
 3. Display
 4. Exit
 Enter your option: 2
+1. Enqueue
+2. Dequeue
+3. Display
+4. Exit
+Enter your option: 3
+Priority Queue:
+3 (3)
+4 (4)
+5 (5)
+6 (6)
+7 (7)
 1. Enqueue
 2. Dequeue
 3. Display
