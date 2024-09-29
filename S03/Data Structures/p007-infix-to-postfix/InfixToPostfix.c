@@ -1,19 +1,17 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 #define MAX 100
 
 struct Stack
 {
     int top;
-    char items[MAX];
+    int items[MAX];
 };
 
-void initStack(struct Stack *stack)
+int isFull(struct Stack *stack)
 {
-    stack->top = -1;
+    return stack->top == MAX - 1;
 }
 
 int isEmpty(struct Stack *stack)
@@ -21,31 +19,40 @@ int isEmpty(struct Stack *stack)
     return stack->top == -1;
 }
 
-void push(struct Stack *stack, char value)
+void push(struct Stack *stack, int data)
 {
-    if (stack->top == MAX - 1)
+    if (isFull(stack))
     {
-        printf("Stack Overflow\n");
-        return;
+        printf("Stack Overflow!");
     }
-    stack->items[++(stack->top)] = value;
+    else
+    {
+        stack->items[++(stack->top)] = data;
+    }
 }
 
-char pop(struct Stack *stack)
+int pop(struct Stack *stack)
 {
     if (isEmpty(stack))
     {
-        printf("Stack Underflow\n");
-        exit(1);
+        printf("Stack Underflow!");
     }
-    return stack->items[(stack->top)--];
+    else
+    {
+        return (stack->items[(stack->top)--]);
+    }
 }
 
-char peek(struct Stack *stack)
+int peek(struct Stack *stack)
 {
     if (isEmpty(stack))
-        return '\0';
-    return stack->items[stack->top];
+    {
+        printf("Stack Underflow!");
+    }
+    else
+    {
+        return (stack->items[(stack->top)]);
+    }
 }
 
 int isOperand(char ch)
@@ -73,7 +80,7 @@ int precedence(char ch)
 void infixToPostfix(char *infix, char *postfix)
 {
     struct Stack stack;
-    initStack(&stack);
+    stack.top = -1;
     int i = 0, j = 0;
     char ch;
 
@@ -105,6 +112,7 @@ void infixToPostfix(char *infix, char *postfix)
             }
             push(&stack, ch);
         }
+
         i++;
     }
 
@@ -115,7 +123,7 @@ void infixToPostfix(char *infix, char *postfix)
     postfix[j] = '\0';
 }
 
-int main()
+void main()
 {
     char infix[MAX], postfix[MAX];
 
@@ -125,6 +133,4 @@ int main()
     infixToPostfix(infix, postfix);
 
     printf("Postfix expression: %s\n", postfix);
-
-    return 0;
 }
