@@ -16,7 +16,7 @@ int isFull()
 
 int isEmpty()
 {
-    return (front == -1);
+    return (front == -1 && rear == -1);
 }
 
 void enqueue(int data, int priority)
