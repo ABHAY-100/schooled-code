@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <cctype>
+#include <ctype.h>
 
 #define MAX 100
 
@@ -13,12 +13,12 @@ struct Stack
 
 int isFull(struct Stack *stack)
 {
-    return stack->top == MAX - 1;
+    return (stack->top == MAX - 1);
 }
 
 int isEmpty(struct Stack *stack)
 {
-    return stack->top == -1;
+    return (stack->top == -1);
 }
 
 void push(struct Stack *stack, int data)
@@ -38,11 +38,11 @@ int pop(struct Stack *stack)
     if (isEmpty(stack))
     {
         printf("Stack Underflow!");
-        return -1;
+        return 0;
     }
     else
     {
-        return (stack->items[(stack->top)--]);
+        return stack->items[(stack->top)--];
     }
 }
 
@@ -63,8 +63,8 @@ int evaluatePostfix(char *postfix)
         }
         else
         {
-            operand2 = pop(&stack);
             operand1 = pop(&stack);
+            operand2 = pop(&stack);
 
             switch (token[0])
             {
@@ -78,6 +78,11 @@ int evaluatePostfix(char *postfix)
                 result = operand1 * operand2;
                 break;
             case '/':
+                if (operand2 == 0)
+                {
+                    printf("Error: Division by zero!\n");
+                    return 0;
+                }
                 result = operand1 / operand2;
                 break;
             case '^':
@@ -89,8 +94,8 @@ int evaluatePostfix(char *postfix)
                 break;
             default:
                 printf("Invalid operator: %s\n", token);
-                return -1;
             }
+
             push(&stack, result);
         }
 
