@@ -108,7 +108,7 @@ int evaluatePostfix(char *postfix)
 int main()
 {
     char expression[] = "5 4 +";
-
+    printf("Postfix Expression: %s\n", expression);
     int result = evaluatePostfix(expression);
     printf("Result of postfix evaluation: %d\n", result);
 
