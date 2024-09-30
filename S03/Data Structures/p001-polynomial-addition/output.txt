@@ -1,3 +1,5 @@
+gcc PolynomialAddition.c
+./a.out
 POLYNOMIAL 1 :
 
 Enter the no. terms in the polynomial: 4

@@ -1,3 +1,5 @@
+gcc SparseMatrixTranspose.c
+./a.out
 Enter the number of rows: 2
 Enter the number of columns: 2
 Enter the value at (0, 0): 0

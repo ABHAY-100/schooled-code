@@ -1,3 +1,6 @@
+gcc BinarySearch.c
+./a.out
+
 Enter the no. of array elements: 5
 Enter the array elements: 1
 2

@@ -1,3 +1,5 @@
+gcc PriorityQueue.c
+./a.out
 1. Enqueue
 2. Dequeue
 3. Display

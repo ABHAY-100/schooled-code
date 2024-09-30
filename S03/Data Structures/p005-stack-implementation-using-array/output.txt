@@ -1,3 +1,5 @@
+gcc StackImplementation.c
+./a.out
 Menu: 
 1. Add an element
 2. Delete an element

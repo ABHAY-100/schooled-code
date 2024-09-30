@@ -1,2 +1,4 @@
+gcc PostfixEvaluation.c
+./a.out
 Postfix Expression: 5 4 +
 Result of postfix evaluation: 9

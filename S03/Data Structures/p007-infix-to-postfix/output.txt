@@ -1,2 +1,4 @@
+gcc InfixToPostfix.c
+./a.out
 Enter an infix expression: A+B-C
 Postfix expression: AB+C-

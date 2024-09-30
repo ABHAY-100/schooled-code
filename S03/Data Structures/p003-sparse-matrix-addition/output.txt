@@ -1,3 +1,5 @@
+gcc SparseMatrixAddition.c
+./a.out
 Enter the number of rows and columns of matrix 1: 2
 2
 Enter the number of rows and columns of matrix 2: 2

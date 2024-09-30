@@ -1,3 +1,5 @@
+gcc LinearSearch.c
+./a.out
 Enter the no. of array elements: 7
 Enter the array elements: 1
 4
