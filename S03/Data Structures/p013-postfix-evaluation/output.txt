@@ -1,4 +1,4 @@
 gcc PostfixEvaluation.c
 ./a.out
-Postfix Expression: 5 4 +
-Result of postfix evaluation: 9
+Postfix Expression: 100 200 + 2 / 5 * 7 +
+Result of postfix evaluation: 757

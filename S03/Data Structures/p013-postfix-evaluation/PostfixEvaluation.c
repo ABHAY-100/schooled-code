@@ -69,27 +69,27 @@ int evaluatePostfix(char *postfix)
             switch (token[0])
             {
             case '+':
-                result = operand1 + operand2;
+                result = operand2 + operand1;
                 break;
             case '-':
-                result = operand1 - operand2;
+                result = operand2 - operand1;
                 break;
             case '*':
-                result = operand1 * operand2;
+                result = operand2 * operand1;
                 break;
             case '/':
-                if (operand2 == 0)
+                if (operand1 == 0)
                 {
                     printf("Error: Division by zero!\n");
                     return 0;
                 }
-                result = operand1 / operand2;
+                result = operand2 / operand1;
                 break;
             case '^':
                 result = 1;
-                for (int j = 0; j < operand2; j++)
+                for (int j = 0; j < operand1; j++)
                 {
-                    result *= operand1;
+                    result *= operand2;
                 }
                 break;
             default:
@@ -107,7 +107,7 @@ int evaluatePostfix(char *postfix)
 
 int main()
 {
-    char expression[] = "5 4 +";
+    char expression[] = "100 200 + 2 / 5 * 7 +";
     printf("Postfix Expression: %s\n", expression);
     int result = evaluatePostfix(expression);
     printf("Result of postfix evaluation: %d\n", result);
