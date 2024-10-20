@@ -1,3 +1,0 @@
-name: athul ; id: 90422 ; age: 30
-name: elvin ; id: 23421 ; age: 23
-name: abhay ; id: 50324 ; age: 18
