@@ -41,13 +41,13 @@ void insertAtEnd(struct Node **head, int data)
 void insertAtPosition(struct Node **head, int data, int position)
 {
     struct Node *newNode = createNode(data);
-    if (position == 0)
+    if (position == 1)
     {
         insertAtFirst(head, data);
         return;
     }
     struct Node *temp = *head;
-    for (int i = 0; temp != NULL && i < position - 1; i++)
+    for (int i = 1; temp != NULL && i < position - 1; i++)
     {
         temp = temp->next;
     }
@@ -103,12 +103,12 @@ void deleteAtPosition(struct Node **head, int position)
         return;
     }
     struct Node *temp = *head;
-    if (position == 0)
+    if (position == 1)
     {
         deleteFromFirst(head);
         return;
     }
-    for (int i = 0; temp != NULL && i < position - 1; i++)
+    for (int i = 1; temp != NULL && i < position - 1; i++)
     {
         temp = temp->next;
     }
