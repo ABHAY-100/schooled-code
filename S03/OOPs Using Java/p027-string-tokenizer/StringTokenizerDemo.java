@@ -21,4 +21,3 @@ class StringTokenizerDemo {
         System.out.println("SUM = " + sum);
     }
 }
- 
