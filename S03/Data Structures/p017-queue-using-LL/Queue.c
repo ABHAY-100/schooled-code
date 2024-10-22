@@ -117,7 +117,7 @@ int main() {
             case 3:
                 data = peek(queue);
                 if (data != -1) {
-                    printf("Front element is: %d\n", data);
+                    printf("Peek element is: %d\n", data);
                 }
                 break;
             case 4:
