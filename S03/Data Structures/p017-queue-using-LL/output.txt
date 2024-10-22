@@ -1,0 +1,94 @@
+gcc Queue.c
+./a.out
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 1
+Enter the value to enqueue: 1
+Enqueued 1 into the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 1
+Enter the value to enqueue: 2
+Enqueued 2 into the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 1
+Enter the value to enqueue: 3
+Enqueued 3 into the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 4
+Queue elements: 1 -> 2 -> 3 -> NULL
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 3
+Peek element is: 1
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 2
+Dequeued 1 from the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 2
+Dequeued 2 from the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 2
+Dequeued 3 from the queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 2
+Queue underflow! Cannot dequeue from an empty queue.
+
+Menu:
+1. Enqueue
+2. Dequeue
+3. Peek
+4. Print Queue
+5. Exit
+Enter your choice: 5

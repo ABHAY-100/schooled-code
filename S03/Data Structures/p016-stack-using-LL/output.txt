@@ -1,0 +1,113 @@
+gcc Stack.c
+./a.out
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 1
+Enter the value to push: 1
+Pushed 1 onto the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 1
+Enter the value to push: 2
+Pushed 2 onto the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 1
+Enter the value to push: 3
+Pushed 3 onto the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 1
+Enter the value to push: 4
+Pushed 4 onto the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 4
+Stack elements: 4 -> 3 -> 2 -> 1 -> NULL
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 3
+Top element is: 4
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 2
+Popped 4 from the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 2
+Popped 3 from the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 2
+Popped 2 from the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 2
+Popped 1 from the stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 2
+Stack underflow! Cannot pop from an empty stack.
+
+Menu:
+1. Push
+2. Pop
+3. Peek
+4. Print Stack
+5. Exit
+Enter your choice: 5

@@ -1,0 +1,247 @@
+gcc SinglyLinkedList.c
+./a.out
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 1
+Enter the value to insert at the beginning: 1
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 1
+Enter the value to insert at the beginning: 2
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 1
+Enter the value to insert at the beginning: 3
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 2
+Enter the value to insert at the end: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 2
+Enter the value to insert at the end: 5
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 2
+Enter the value to insert at the end: 6
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 7
+3 -> 2 -> 1 -> 4 -> 5 -> 6 -> NULL
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 3
+Enter the value and position to insert: 7
+4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 7
+3 -> 2 -> 1 -> 7 -> 4 -> 5 -> 6 -> NULL
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 5
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 5
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 7
+1 -> 7 -> 4 -> NULL
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 6
+Enter the position to delete from: 2
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 7
+1 -> 4 -> NULL
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 4
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 4
+List is empty
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: List is empty
+
+Menu:
+1. Insert at Beginning
+2. Insert at End
+3. Insert at Position
+4. Delete from Beginning
+5. Delete from End
+6. Delete from Position
+7. Print List
+8. Exit
+Enter your choice: 8
