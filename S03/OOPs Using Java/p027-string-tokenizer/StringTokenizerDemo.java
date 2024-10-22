@@ -1,8 +1,11 @@
 import java.util.StringTokenizer;
+import java.util.Scanner;
 
 class StringTokenizerDemo {
     public static void main(String[] args) {
-        String s = "1 2 4 4 5 2", temp;
+    	  Scanner sn = new Scanner(System.in);
+    	  String s = sn.nextLine();
+    	  String temp;
         int sum = 0, n;
 
         StringTokenizer str = new StringTokenizer(s, " ");
@@ -18,3 +21,4 @@ class StringTokenizerDemo {
         System.out.println("SUM = " + sum);
     }
 }
+ 
