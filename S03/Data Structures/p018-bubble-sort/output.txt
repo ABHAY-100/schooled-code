@@ -1,0 +1,9 @@
+gcc BubbleSort.c
+./a.out
+Enter the number of elements: 5
+Enter 1th element: 3
+Enter 2th element: 5
+Enter 3th element: 2
+Enter 4th element: 6
+Enter 5th element: 1
+Sorted Array: 1 2 3 5 6
