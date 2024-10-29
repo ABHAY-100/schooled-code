@@ -1,0 +1,190 @@
+\documentclass{article}
+
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry} % Adjust margins
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{wasysym}
+\usepackage[english]{babel}
+\usepackage{titlesec}
+\pagestyle{empty}
+
+\definecolor{color_black}{rgb}{0,0,0}
+\definecolor{color_red}{rgb}{1,0,0}
+
+\begin{document}
+
+
+
+
+
+\begin{flushright}
+
+
+
+    % Type the Experiment Number here below 
+    {\fontsize{12}{12}\selectfont \textmd 
+    Experiment No: 1
+    } \\
+
+
+
+    \vspace{0.16cm}
+
+
+
+    % Type the Date here below 
+    {\fontsize{12}{12}\selectfont \textmd 
+    Date:  \hspace{2.08cm}
+    }
+\end{flushright}
+
+
+
+
+
+\vspace{1.5cm}
+
+
+
+
+
+\begin{center}
+
+
+
+    % Type the Experiment name here
+    {\fontsize{24}{28}\selectfont \bfseries 
+     POLYNOMIAL ADDITION
+    } \\
+
+
+    
+    \vspace{1.5cm}
+
+
+    
+\end{center}
+
+
+
+
+
+\vspace{1.8cm}
+
+
+
+
+
+% Aim Section
+% Type the Aim below 
+\noindent {\large \textbf{Aim:}} \\ \\
+To read two polynomials and store them in an array. Calculate the sum of the two polynomials.
+
+
+
+
+
+\vspace{1cm}
+
+
+
+
+
+% Algorithm Section
+% Type the Algorithm below 
+\noindent {\large \textbf{Algorithm:}}  \\
+\begin{enumerate}
+    \item Start
+
+    \item Create a structure poly (float coeff, int exp)
+
+    \item Create array of structure p1[10], p2[10], p3[10]
+
+    \item Define function int readpoly (structure poly p[])
+    
+    \item Read number of terms in the polynomial - t1
+
+    \item Begin for loop from i=0 to t1 \\ read coefficients and exponents \\ return t1
+    
+    \item Define function addpoly (structure poly p1[10], structure poly p2[10], structure poly p3[10], int t1, int t2)
+    
+    \item Initialize i, j, k to 0
+
+    \item Begin while loop: 
+    \begin{verbatim}
+      i < t1 & j < t2
+      if    ( p1[i].exp == p2[j].exp )
+            p3[k].coeff = p1[i].coeff + p2[j].coeff
+            p3[k].exp = p1[i].exp
+            i++, j++, k++
+      else if    ( p1[i].exp > p2[j].exp )
+            p3[k].coeff = p1[i].coeff
+            p3[k].exp = p1[i].exp
+            i++, k++
+      else  p3[k].coeff = p2[j].coeff
+            p3[k].exp = p2[j].exp
+            j++, k++
+    \end{verbatim}
+
+    \item Begin while loop : i < t1
+    \begin{verbatim}
+      p3[k].coeff = p1[i].coeff
+      p3[k].exp = p1[i].exp
+      i++, k++
+    \end{verbatim}
+
+    \item Begin while loop : j < t2
+    \begin{verbatim}
+      p3[k].coeff = p2[i].coeff
+      p3[k].exp = p2[i].exp
+      j++, k++
+    \end{verbatim}
+
+    \item Define function displaypoly (structure poly p[], int t) \\
+    Begin for loop from k = 0 to t-1 \\
+    display polynomial
+
+      
+    \item In main ()
+     \begin{verbatim}
+      Call readpoly(p1)
+      Call displaypoly(p1, t1)
+      Call readpoly(p2)
+      Call displaypoly(p2, t2)
+      Call addpoly(p1, p2, p3, t1, t2)
+      Call displaypoly(p3, t3)
+     \end{verbatim}
+
+    \item Stop
+    
+\end{enumerate}
+
+
+
+
+
+\vspace{1cm}
+
+
+
+
+
+% \newpage
+% Add \newpage if you need the result in a new page.
+
+
+
+
+
+% Result Section
+\noindent {\large \textbf{Result:}} \\ \\
+Program has been executed successfully and obtained the output
+
+
+
+
+
+\end{document}

@@ -1,6 +1,5 @@
-poly rep, poly add, poly multi using linked list
+poly multi using linked list
 insertion sort
-selection sort
 quick sort
 merge sort
 heap sort
@@ -9,6 +8,4 @@ binary tree using linked list - { insert, search, pre order, post order, inorder
 BFS, DFS
 hashing
 
-circular linked list
 singly linked list - copying the list, merge two list
-priority queue using ll
