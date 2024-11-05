@@ -1,6 +1,4 @@
 poly multi using linked list
-insertion sort
-merge sort
 heap sort
 binary tree using array
 binary tree using linked list - { insert, search, pre order, post order, inorder, deletion }
