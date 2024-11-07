@@ -1,6 +1,4 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class ToFahrenheit extends JFrame {
@@ -26,12 +24,7 @@ public class ToFahrenheit extends JFrame {
         fahrenheitLabel = new JLabel("Fahrenheit: ");
         add(fahrenheitLabel);
 
-        convertButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                convertTemperature();
-            }
-        });
+        convertButton.addActionListener(event -> convertTemperature());
 
         setVisible(true);
     }
@@ -49,6 +42,7 @@ public class ToFahrenheit extends JFrame {
     }
 
     public static void main(String[] args) {
-        new ToFahrenheit();
+        ToFahrenheit converter = new ToFahrenheit();
+        converter.setVisible(true);
     }
 }
