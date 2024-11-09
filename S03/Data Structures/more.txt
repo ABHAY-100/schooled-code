@@ -1,8 +1,5 @@
 poly multi using linked list
 heap sort
-binary tree using array
 binary tree using linked list - { insert, search, pre order, post order, inorder, deletion }
 BFS, DFS
 hashing
-
-singly linked list - copying the list, merge two list
