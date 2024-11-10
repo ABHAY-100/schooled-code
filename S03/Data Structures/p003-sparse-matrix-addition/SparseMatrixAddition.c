@@ -29,14 +29,14 @@ int addSparseMatrix(int sparse1[][3], int sparse2[][3], int sparse3[][3])
     sparse3[0][1] = sparse1[0][1];
     while (i <= sparse1[0][2] && j <= sparse2[0][2])
     {
-        if (sparse1[i][0] < sparse2[j][0] || sparse1[i][0] == sparse2[j][0] && sparse1[i][1] < sparse2[j][1])
+        if (sparse1[i][0] < sparse2[j][0] || ( sparse1[i][0] == sparse2[j][0] && sparse1[i][1] < sparse2[j][1] ))
         {
             sparse3[k][0] = sparse1[i][0];
             sparse3[k][1] = sparse1[i][1];
             sparse3[k][2] = sparse1[i][2];
             i++;
         }
-        else if (sparse1[i][0] > sparse2[j][0] || sparse1[i][0] == sparse2[j][0] && sparse1[i][1] > sparse2[j][1])
+        else if (sparse1[i][0] > sparse2[j][0] || ( sparse1[i][0] == sparse2[j][0] && sparse1[i][1] > sparse2[j][1] ))
         {
             sparse3[k][0] = sparse2[j][0];
             sparse3[k][1] = sparse2[j][1];
