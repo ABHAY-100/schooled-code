@@ -1,5 +1,2 @@
-poly multi using linked list
-heap sort
-binary tree using linked list - { insert, search, pre order, post order, inorder, deletion }
 BFS, DFS
 hashing
