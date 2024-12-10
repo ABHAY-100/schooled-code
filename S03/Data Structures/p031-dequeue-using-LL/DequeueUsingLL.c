@@ -4,12 +4,12 @@
 struct Node {
     int data;
     struct Node *next;
-    struct Node *prev; // Pointer to the previous node
+    struct Node *prev;
 };
 
 struct Deque {
-    struct Node *front; // Pointer to the front of the deque
-    struct Node *rear;  // Pointer to the rear of the deque
+    struct Node *front;
+    struct Node *rear;
 };
 
 struct Node *createNode(int data) {
@@ -54,7 +54,7 @@ void insertRear(struct Deque *deque, int data) {
 int deleteFront(struct Deque *deque) {
     if (deque->front == NULL) {
         printf("Deque is empty\n");
-        return -1; // Indicating that the deque is empty
+        return -1;
     }
     
     struct Node *temp = deque->front;
@@ -65,7 +65,7 @@ int deleteFront(struct Deque *deque) {
     if (deque->front != NULL) {
         deque->front->prev = NULL;
     } else {
-        deque->rear = NULL; // If the queue is now empty
+        deque->rear = NULL;
     }
 
     free(temp);
@@ -75,7 +75,7 @@ int deleteFront(struct Deque *deque) {
 int deleteRear(struct Deque *deque) {
     if (deque->rear == NULL) {
         printf("Deque is empty\n");
-        return -1; // Indicating that the deque is empty
+        return -1;
     }
     
     struct Node *temp = deque->rear;
@@ -86,7 +86,7 @@ int deleteRear(struct Deque *deque) {
     if (deque->rear != NULL) {
         deque->rear->next = NULL;
     } else {
-        deque->front = NULL; // If the queue is now empty
+        deque->front = NULL;
     }
 
     free(temp);
