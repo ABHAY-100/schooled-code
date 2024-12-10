@@ -1,3 +1,3 @@
-dequeue
+dequeue, priority queue using LL
 BFS, DFS
 hashing
