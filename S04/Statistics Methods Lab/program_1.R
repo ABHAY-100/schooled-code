@@ -12,14 +12,13 @@ numeric_vector <- c(1, 2, 3, 4, 5)
 character_vector <- c("apple", "pear")
 logical_vector <- c(TRUE, FALSE, TRUE)
 matrix_data <- matrix(1:12, nrow=3, ncol=4, byrow=TRUE)
-list_data <- list(name="asil", age=21, city="malappuram")  # Corrected variable name
+list_data <- list(name="asil", age=21, city="malappuram")
 data_frame <- data.frame(
   name = c("asil", "antony"),
   age = c(19, 20),
   city = c("kalamassery", "aluva")
 )
 
-# Printing all the variables
 print(num_var)
 print(int_var)
 print(char_var)
@@ -29,6 +28,5 @@ print(numeric_vector)
 print(character_vector)
 print(logical_vector)
 print(matrix_data)
-print(list_data)  # Corrected variable name from 'ist_data' to 'list_data'
+print(list_data)
 print(data_frame)
-
