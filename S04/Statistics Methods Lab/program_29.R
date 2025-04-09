@@ -1,10 +1,11 @@
-set.seed(1234)
 
-myData = data.frame(
-  name = paste(rep("R_", 10), 1:10),
-  weight = round(rnorm(10, 30, 2), 2)
-)
+x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131)  
+y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)  
 
-result = wilcox.test(myData$weight, mu = 25, alternative = "greater")
-print(myData)
-print(result)
+
+relation <- lm(y ~ x)  
+
+new_data <- data.frame(x = 170)
+result <- predict(relation, new_data) 
+
+print(result) 
