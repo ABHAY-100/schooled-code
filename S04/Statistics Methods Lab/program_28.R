@@ -5,6 +5,6 @@ myData = data.frame(
   weight = round(rnorm(10, 30, 2), 2)
 )
 
-result = wilcox.test(myData$weight, mu = 25, alternative = "less")
+result = wilcox.test(myData$weight, mu = 25, alternative = "greater")
 print(myData)
 print(result)
