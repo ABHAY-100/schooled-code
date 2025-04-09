@@ -1,5 +1,10 @@
-x=seq(-15,15,by=0.1)
+set.seed(1234)
 
-y=pnorm(x,mean(x),sd(x))
+myData = data.frame(
+  name = paste(rep("R_", 10), 1:10),
+  weight = round(rnorm(10, 30, 2), 2)
+)
 
-plot(x,y)
+result = wilcox.test(myData$weight, mu = 25, alternative = "less")
+print(myData)
+print(result)
