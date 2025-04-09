@@ -1,5 +1,18 @@
-x <- c(151, 174, 138, 186, 128, 136, 179, 163, 152, 131)
-y <- c(63, 81, 56, 91, 47, 57, 76, 72, 62, 48)
-relation <- lm(y ~ x)
-plot(x, y, col = "blue", main = "Height & Weight Regression", cex = 1.3, pch = 16, xlab = "Height in cm", ylab = "Weight in kg")
-abline(relation)
+input <- mtcars[, c("mpg", "disp", "hp", "wt")]
+
+model <- lm(mpg ~ disp + hp + wt, data = input)
+
+print(model)
+
+cat("#### The Coefficient Values ####\n")
+
+a <- coef(model)[1]
+print(a)
+
+Xdisp <- coef(model)[2]
+Xhp <- coef(model)[3]
+Xwt <- coef(model)[4]
+
+print(Xdisp)
+print(Xhp)
+print(Xwt)
