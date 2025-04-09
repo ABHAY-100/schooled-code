@@ -1,6 +1,6 @@
-x=c(15,56,23,87)
-y=c(43,76,34,67)
+library("MASS")
 
-result = cor(x,y,method="spearman")
-
-cat("spearman corelation coefficient is:",result)
+car.data<-data.frame(Cars93$AirBags, Cars93$Type)
+car.data= table(Cars93$AirBags,Cars93$Type)
+print(car.data)
+print(chisq.test(car.data))
