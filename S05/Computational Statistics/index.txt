@@ -1,0 +1,34 @@
+Cycle 1
+ 
+1. Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+2. Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
+3. Read a number in decimal and convert it into different bases.
+4. Print the multiplication table of a given number. (use while loop)
+5. Find nth Fibonacci number using recursion.
+6. Read and display a sparse matrix using dictionary
+7. Create a Python dictionary representing a student's grades in different subjects (e.g., Math, Science, History). Write a function to calculate the average grade of the student across all subjects.
+8. Prime Numbers in the Fibonacci Sequence
+9. Visualization of Continent Areas using Bar Charts
+10. Data Analysis using Pandas – Pivot Tables and Cross Tabulation
+
+Cycle 2
+
+11. Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: a. Open brackets must be closed by the same type of brackets., b. Open brackets must be closed in the correct order. c. Every close bracket has a corresponding open bracket of the same type.
+12. Define a tuple containing the names of different fruits. Write a Python program that prompts the user to enter a fruit name. If the entered fruit exists in the tuple, display a message confirming its presence; otherwise, display a message indicating its absence.
+13. Count the number of vowels, consonants, words and question marks in a given string.
+
+Cycle 3
+ 
+14. Plot a graph y = f(x).
+15. How to get all 2D diagonals of a 3D NumPy array?
+16. Flatten a 2d numpy array into 1d array
+17. NumPy – Fibonacci Series using Binet Formula
+18. Inverse a matrix using NumPy
+19. Calculate inner, outer, and cross products of matrices and vectors using NumPy
+20. Compute the Kronecker product of two multidimensional NumPy arrays
+21. Convert the matrix into a list
+
+Cycle 4
+22. Calculate the QR decomposition of matrix using numpy
+23. Convert a NumPy array into a csv file
+24. Calculate the average, variance and standard deviation in Python using NumPy
