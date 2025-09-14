@@ -40,7 +40,6 @@ int main()
     fd_set fds;
     struct timeval tv;
 
-    // Create socket
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0)
     {
         die("socket creation failed");
@@ -51,19 +50,17 @@ int main()
     servaddr.sin_port = htons(PORT);
     servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-    for (int i = 0; i < MAX_FRAMES; i++)
+    int pattern[] = {1, 2, 3, 4, 5};
+    int pattern_len = sizeof(pattern) / sizeof(pattern[0]);
+    for (int i = 0; i < pattern_len; i++)
     {
-        // Prepare frame
-        frame.seq = current_seq;
-        snprintf(frame.data, MAX_FRAME_SIZE, "Frame %d data", i);
-
+        frame.seq = pattern[i];
+        int attempts = 0;
         while (1)
         {
-            // Send frame
+            printf("\nSender: Sending Frame %d\n", frame.seq);
             sendto(sockfd, &frame, sizeof(frame), 0, (const struct sockaddr *)&servaddr, len);
-            printf("Sender: Sent frame with seq %d\n", current_seq);
 
-            // Wait for ACK with timeout
             FD_ZERO(&fds);
             FD_SET(sockfd, &fds);
             tv.tv_sec = TIMEOUT_SEC;
@@ -76,23 +73,17 @@ int main()
             }
             else if (ready == 0)
             {
-                printf("Sender: Timeout, resending frame with seq %d\n", current_seq);
+                printf("Sender: No ACK received, retransmitting Frame %d\n", frame.seq);
                 continue;
             }
 
-            // Receive ACK
             recvfrom(sockfd, &ack, sizeof(ack), 0, (struct sockaddr *)&servaddr, &len);
             printf("Sender: Received ACK %d\n", ack.ack);
 
-            if (ack.ack == current_seq)
+            if (ack.ack == frame.seq)
             {
-                printf("Sender: ACK confirmed for seq %d\n", current_seq);
-                current_seq = 1 - current_seq; // Toggle seq
+                printf("Sender: Frame %d successfully transmitted\n", frame.seq);
                 break;
-            }
-            else
-            {
-                printf("Sender: Incorrect ACK, resending\n");
             }
         }
     }
