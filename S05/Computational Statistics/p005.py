@@ -1,9 +1,9 @@
-def fibo(number) :
-    if number == 0 :
+def fibo(number):
+    if number == 0:
         return 0
-    elif number == 1 :
+    elif number == 1:
         return 1
-    else :
+    else:
         return (number - 1) + (number - 2)
 
 inputVal = int(input("Enter a number:- "))

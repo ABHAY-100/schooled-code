@@ -1,6 +1,9 @@
 import numpy as np
 
-A = np.array([[1, 2], [3, 4], [5, 6]])
+rows = int(input("Rows: "))
+cols = int(input("Cols: "))
+
+A = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
 Q, R = np.linalg.qr(A)
 
 print("Q @ R close to A:", np.allclose(Q @ R, A))

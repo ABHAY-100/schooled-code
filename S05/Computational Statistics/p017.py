@@ -10,6 +10,6 @@ def fibonacci_binet(n):
 
     return np.rint(fib).astype(int)
 
-fib_series = fibonacci_binet(10)
+fib_series = fibonacci_binet(10) # first 10 fibo
 
 print(fib_series)

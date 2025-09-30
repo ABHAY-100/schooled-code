@@ -1,8 +1,10 @@
 import numpy as np
 
-A = np.array([[4, 7],
-              [2, 6]])
+rows = int(input("Rows: "))
+cols = int(input("Cols: "))
 
-A_inv = np.linalg.inv(A)
+a = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
 
-print(A_inv)
+a_inv = np.linalg.inv(a)
+
+print(a_inv)

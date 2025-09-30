@@ -1,6 +1,6 @@
 inputVal = int(input("Enter a number:- "))
 
-if (inputVal % 2 == 0) :
+if (inputVal % 2 == 0):
     print("The number is even")
-else :
+else:
     print("The number is odd")

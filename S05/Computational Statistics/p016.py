@@ -1,6 +1,9 @@
 import numpy as np
 
-a = np.array([[1, 2], [3, 4]])
+rows = int(input("Rows: "))
+cols = int(input("Cols: "))
+
+a = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
 
 flat = a.flatten()
 

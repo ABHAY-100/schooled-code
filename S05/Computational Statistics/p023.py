@@ -1,7 +1,8 @@
 import numpy as np
 
-arr = np.array([[1, 2, 3],
-                [4, 5, 6],
-                [7, 8, 9]])
+rows = int(input("Rows: "))
+cols = int(input("Cols: "))
+
+arr = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
 
 np.savetxt('output.csv', arr, delimiter=',', fmt='%d')

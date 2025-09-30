@@ -1,10 +1,14 @@
 import numpy as np
 
-A = np.array([[1, 2],
-              [3, 4]])
+rows = int(input("Rows of A: "))
+cols = int(input("Cols of A: "))
 
-B = np.array([[0, 5],
-              [6, 7]])
+A = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
+
+rows = int(input("Rows of B: "))
+cols = int(input("Cols of B: "))
+
+B = np.array(input(f"Enter {rows*cols} numbers (seperated by spaces): ").split(), dtype=int).reshape(rows, cols)
 
 K = np.kron(A, B)
 

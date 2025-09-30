@@ -1,5 +1,5 @@
 Cycle 1
- 
+
 1. Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
 2. Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
 3. Read a number in decimal and convert it into different bases.
@@ -7,18 +7,19 @@ Cycle 1
 5. Find nth Fibonacci number using recursion.
 6. Read and display a sparse matrix using dictionary
 7. Create a Python dictionary representing a student's grades in different subjects (e.g., Math, Science, History). Write a function to calculate the average grade of the student across all subjects.
+
 8. Prime Numbers in the Fibonacci Sequence
-9. Visualization of Continent Areas using Bar Charts
-10. Data Analysis using Pandas – Pivot Tables and Cross Tabulation
 
 Cycle 2
 
 11. Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if: a. Open brackets must be closed by the same type of brackets., b. Open brackets must be closed in the correct order. c. Every close bracket has a corresponding open bracket of the same type.
 12. Define a tuple containing the names of different fruits. Write a Python program that prompts the user to enter a fruit name. If the entered fruit exists in the tuple, display a message confirming its presence; otherwise, display a message indicating its absence.
 13. Count the number of vowels, consonants, words and question marks in a given string.
+9. Visualization of Continent Areas using Bar Charts
+10. Data Analysis using Pandas – Pivot Tables and Cross Tabulation
 
 Cycle 3
- 
+
 14. Plot a graph y = f(x).
 15. How to get all 2D diagonals of a 3D NumPy array?
 16. Flatten a 2d numpy array into 1d array
@@ -29,6 +30,30 @@ Cycle 3
 21. Convert the matrix into a list
 
 Cycle 4
+
 22. Calculate the QR decomposition of matrix using numpy
 23. Convert a NumPy array into a csv file
 24. Calculate the average, variance and standard deviation in Python using NumPy
+25. Compute the eigenvalues and eigenvectors of a given square array using NumPy
+26. Calculate the n-th order discrete difference along the given axis
+27. Evaluate Einstein’s summation convention of two multidimensional NumPy arrays
+28. Compute pearson product-moment correlation coefficients of two given NumPy arrays
+32. Plot line graph from NumPy array
+
+Cycle 5
+
+29. Write a program to count the number of words, sentences, upper case letters, lowercase letters and special symbols in a text stored in file.
+30. Measure your classmate’s height and draw the histogram
+31. Above Table contains population and murder rates (in units of murders per 100,000 people per year) for different states. Compute the mean, median and variance for the population.
+    +-------------+-------------+--------+
+    | State       | Population  | Murder |
+    +-------------+-------------+--------+
+    | Alabama     | 4,779,736   | 5.7    |
+    | Alaska      |   710,231   | 5.6    |
+    | Arizona     | 6,392,017   | 4.7    |
+    | Arkansas    | 2,915,918   | 5.6    |
+    | California  |37,253,956   | 4.4    |
+    | Colorado    | 5,029,196   | 2.8    |
+    | Connecticut | 3,574,097   | 2.4    |
+    | Delaware    |   897,934   | 5.8    |
+    +-------------+-------------+--------+
