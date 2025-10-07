@@ -1,78 +1,74 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<arpa/inet.h>
-#include<netdb.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
 
-#define PORT 80
+#define PORT 8080
 #define BUFFER_SIZE 256
 #define BACKLOG 5
-#define LOCALHOST inet_addr("127.0.0.1")
-#define SERVER "server"
-#define CLIENT "client"
+#define LOCALHOST "127.0.0.1"
 
-void main()
+void error_check(int x, char success[])
 {
-	void error_check(int x, char success[])
-	{
-		if(x<0)
-		{
-			perror("something went wrong");
-			exit(0);
-		}
-		else
-		{
-			printf("%s\n",success);
-		}
-	}
+    if (x < 0)
+    {
+        perror("something went wrong");
+        exit(1);
+    }
+    else
+    {
+        printf("%s\n", success);
+    }
+}
 
-	struct sockaddr_in create_socket_address(char type[])
-	{
-		struct sockaddr_in socket_address;
-		socket_address.sin_family = AF_INET;
-		if(type == SERVER)
-		{
-			socket_address.sin_addr.s_addr=LOCALHOST;
-			socket_address.sin_port=PORT;
-			return socket_address;
+struct sockaddr_in create_socket_address()
+{
+    struct sockaddr_in socket_address;
+    socket_address.sin_family = AF_INET;
+    socket_address.sin_addr.s_addr = inet_addr(LOCALHOST);
+    socket_address.sin_port = htons(PORT);
+    
+    return socket_address;
+}
 
-		}
-		return socket_address;
+int main()
+{
+    // 1. Create server socket
+    int server_sock = socket(AF_INET, SOCK_STREAM, 0);
+    error_check(server_sock, "Server socket created successfully");
 
-	}
+    // 2. Bind the socket to the server address
+    struct sockaddr_in server_address = create_socket_address();
+    socklen_t server_len = sizeof(server_address);
+    int b = bind(server_sock, (struct sockaddr *)&server_address, sizeof(server_address));
+    error_check(b, "Binding successful");
 
-		
-	int s = socket(AF_INET,SOCK_STREAM,0);
-	error_check(s,"server socket created successfully");
+    // 3. Listen for incoming connections
+    int l = listen(server_sock, BACKLOG);
+    error_check(l, "Listening...");
 
-	struct sockaddr_in server_address = create_socket_address(SERVER);
-	socklen_t len1 = sizeof(server_address);
+    // 4. Accept a client connection
+    struct sockaddr_in client_address;
+    socklen_t client_len = sizeof(client_address);
+    int client_sock = accept(server_sock, (struct sockaddr *)&client_address, &client_len);
+    error_check(client_sock, "Accepted connection from client");
 
-	int b =bind(s,(struct sockaddr *) &server_address,len1);
-	error_check(b,"binding successful");
+    // 5. Communication with client
+    char buffer[BUFFER_SIZE] = "";
+    char reply[] = "\n ... Hello, this is the Server ...\n";
 
-	int l = listen(s,BACKLOG);
-	error_check(l,"listening");
+    int status = recv(client_sock, buffer, BUFFER_SIZE, 0);
+    error_check(status, buffer);
 
-	struct sockaddr_in client_address = create_socket_address(CLIENT);
-	socklen_t len2 = sizeof(client_address);
+    status = send(client_sock, reply, strlen(reply), 0);
+    error_check(status, "Reply successfully sent to client");
 
-	int t = accept(s,(struct sockaddr *) &client_address,&len2);
-	error_check(t,"accepted connection from client");
+    // 6. Close sockets
+    close(client_sock);
+    close(server_sock);
 
-	char buffer[BUFFER_SIZE] = "";
-	char reply[] = "\n ... Hello, this is the Server ...\n";
-	int status = -1;
-
-	status = recv(t,buffer,BUFFER_SIZE, 0);
-	error_check(status,buffer);
-	status = send(t,reply,strlen(reply),0);
-	error_check(status,"reply successfully sent to client");
-
-	printf("\n client-server request-reply process successfully demonstrated using sockets \n .... terminating server .... \n");
-	close(t);
-	close(s);
+    return 0;
 }
