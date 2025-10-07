@@ -5,6 +5,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <unistd.h>
+// #include <time.h>
 
 #define PORT 8080
 #define BUFFER_SIZE 256
@@ -34,6 +35,12 @@ struct sockaddr_in create_socket_address()
     return socket_address;
 }
 
+// char* get_time()
+// {
+//     time_t t = time(NULL);
+//     return ctime(&t);
+// }
+
 int main()
 {
     // 1. Create server socket
@@ -59,6 +66,7 @@ int main()
     // 5. Communication with client
     char buffer[BUFFER_SIZE] = "";
     char reply[] = "\n ... Hello, this is the Server ...\n";
+    // char *reply = get_time();
 
     int status = recv(client_sock, buffer, BUFFER_SIZE, 0);
     error_check(status, buffer);
