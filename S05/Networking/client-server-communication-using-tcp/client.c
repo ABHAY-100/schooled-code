@@ -60,5 +60,6 @@ int main()
 
     // 7. Close the socket and exit
     close(s);
+    
     return 0;
 }
