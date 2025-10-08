@@ -46,8 +46,10 @@ char* read_file()
 
     FILE *f = fopen("sample.txt", "r");
 
-    size_t bytes_read = fread(c, 1, 4095, f);
-    c[bytes_read] = '\0';
+    sprintf(c, "Filename: sample.txt\n\n");
+
+    size_t bytes_read = fread(c + strlen(c), 1, 4095 - strlen(c), f);
+    c[strlen(c) + bytes_read] = '\0';
     
     fclose(f);
 
