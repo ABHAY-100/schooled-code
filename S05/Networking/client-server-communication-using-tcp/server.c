@@ -9,7 +9,6 @@
 
 #define PORT 8080
 #define BUFFER_SIZE 256
-#define BACKLOG 5
 #define LOCALHOST "127.0.0.1"
 
 void error_check(int x, char success[])
@@ -50,11 +49,11 @@ int main()
     // 2. Bind the socket to the server address
     struct sockaddr_in server_address = create_socket_address();
     socklen_t server_len = sizeof(server_address);
-    int b = bind(server_sock, (struct sockaddr *)&server_address, sizeof(server_address));
+    int b = bind(server_sock, (struct sockaddr *)&server_address, server_len);
     error_check(b, "Binding successful");
 
     // 3. Listen for incoming connections
-    int l = listen(server_sock, BACKLOG);
+    int l = listen(server_sock, 5);
     error_check(l, "Listening...");
 
     // 4. Accept a client connection
