@@ -10,16 +10,6 @@
 #define LOCALHOST "127.0.0.1"
 #define BUFFER_SIZE 256
 
-struct sockaddr_in create_client_address(const char *server_ip, int port)
-{
-    struct sockaddr_in addr;
-    addr.sin_family = AF_INET;
-    addr.sin_port = htons(port);
-    addr.sin_addr.s_addr = inet_addr(server_ip);
-    
-    return addr;
-}
-
 void error_check(int x, char success[])
 {
     if (x < 0)
@@ -33,6 +23,16 @@ void error_check(int x, char success[])
     }
 }
 
+struct sockaddr_in create_client_address()
+{
+    struct sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(PORT);
+    addr.sin_addr.s_addr = inet_addr(LOCALHOST);
+    
+    return addr;
+}
+
 int main()
 {
     // 1. Create client socket
@@ -40,7 +40,7 @@ int main()
     error_check(s, "socket created");
 
     // 2. Build server address structure
-    struct sockaddr_in server_address = create_client_address(LOCALHOST, PORT);
+    struct sockaddr_in server_address = create_client_address();
 
     // 3. Connect to the server
     int c = connect(s, (struct sockaddr *)&server_address, sizeof(server_address));
