@@ -22,6 +22,14 @@ void error_check(int x, char success[])
     {
         printf("%s\n", success);
     }
+}struct sockaddr_in create_client_address()
+{
+    struct sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(PORT);
+    addr.sin_addr.s_addr = inet_addr(LOCALHOST);
+    
+    return addr;
 }
 
 struct sockaddr_in create_socket_address()
