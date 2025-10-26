@@ -39,7 +39,7 @@ void error_check(int x, char success[])
 {
     if (x < 0)
     {
-        perror("something went wrong");
+        perror("something went wrong!");
         exit(1);
     }
     else
@@ -52,7 +52,7 @@ int main()
 {
     // 1. Create client socket
     int s = socket(AF_INET, SOCK_DGRAM, 0);
-    error_check(s, "socket created");
+    error_check(s, "socket created!");
 
     // Set socket timeout
     struct timeval timeout = { TIMEOUT_SEC, 0 };
@@ -70,49 +70,41 @@ int main()
         packet.data = i;
 
         int retries = 0;
-        int ack_received = 0;
+        int wanna_stop = 0;
 
-        while (!ack_received && retries < MAX_RETRIES)
+        while (!wanna_stop && retries < MAX_RETRIES)
         {
             // Send
-            printf("Sending data %d (seq_num = %d, attempt %d)\n", packet.data, packet.seq_num, retries + 1);
+            printf("Sending Data %d (seq_num = %d, attempt %d)\n", packet.data, packet.seq_num, retries + 1);
             int status = sendto(s, &packet, sizeof(packet), 0, (struct sockaddr *)&server_address, server_len);
             if (status < 0)
             {
-                perror("Send failed");
+                perror("send failed!");
                 retries++;
                 continue;
             }
 
             // Wait
             ACK ack;
+
             status = recvfrom(s, &ack, sizeof(ack), 0, (struct sockaddr *)&server_address, &server_len);
             if (status < 0)
             {
-                printf("Timeout! No ACK received for data %d. Retransmitting...\n", packet.data);
+                printf("Timeout! Retransmitting...\n");
                 retries++;
             }
-
             else if (ack.ack_num == packet.seq_num)
             {
-                printf("ACK received for data %d (seq_num = %d)\n", packet.data, ack.ack_num);
-                ack_received = 1;
-            }
-
-            else
-            {
-                printf("Wrong ACK received (expected %d, got %d). Retransmitting...\n",packet.seq_num, ack.ack_num);
-                retries++;
+                printf("ACK received for Data %d\n", packet.data);
+                wanna_stop = 1;
             }
         }
 
-        if (!ack_received)
+        if (!wanna_stop)
         {
             printf("Failed to receive ACK for data %d after %d retries.\n", packet.data, MAX_RETRIES);
             break;
         }
-
-        printf("---\n");
     }
 
     // 4. Close socket
