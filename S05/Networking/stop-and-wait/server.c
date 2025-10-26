@@ -28,7 +28,7 @@ void error_check(int x, char success[])
 {
     if (x < 0)
     {
-        perror("something went wrong");
+        perror("something went wrong!");
         exit(1);
     }
     else
@@ -51,12 +51,12 @@ int main()
 {
     // 1. Create server socket
     int s = socket(AF_INET, SOCK_DGRAM, 0);
-    error_check(s, "socket created");
+    error_check(s, "socket created!");
 
     // 2. Bind the socket to the server address
     struct sockaddr_in server_address = create_socket_address();
     int b = bind(s, (struct sockaddr *)&server_address, sizeof(server_address));
-    error_check(b, "binding successful");
+    error_check(b, "binding successful!");
 
     // 3. Communication with client
     struct sockaddr_in client_address;
@@ -72,12 +72,10 @@ int main()
     while (packets_received < NUM_PACKETS)
     {
         Packet packet;
-        int status = recvfrom(s, &packet, sizeof(packet), 0, (struct sockaddr *)&client_address, &client_len);
 
+        int status = recvfrom(s, &packet, sizeof(packet), 0, (struct sockaddr *)&client_address, &client_len);
         if (status > 0)
         {
-            printf("\nReceived data %d (seq_num = %d)\n", packet.data, packet.seq_num);
-
             // Simulate packet loss
             if (packet.data == 3 && drop_3 > 0)
             {
@@ -104,7 +102,7 @@ int main()
                 status = sendto(s, &ack, sizeof(ack), 0, (struct sockaddr *)&client_address, client_len);
                 if (status > 0)
                 {
-                    printf("ACK sent for data %d (ack_num = %d)\n", packet.data, ack.ack_num);
+                    printf("ACK sent for data %d\n", packet.data);
                 }
 
                 expected_seq = 1 - expected_seq;
