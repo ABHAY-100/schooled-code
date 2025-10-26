@@ -13,6 +13,8 @@
 
 #define NUM_PACKETS 5
 
+#define WINDOW_SIZE 3
+
 typedef struct
 {
     int seq_num;
@@ -28,7 +30,7 @@ void error_check(int x, char success[])
 {
     if (x < 0)
     {
-        perror("something went wrong");
+        perror("something went wrong!");
         exit(1);
     }
     else
@@ -51,12 +53,12 @@ int main()
 {
     // 1. Create server socket
     int s = socket(AF_INET, SOCK_DGRAM, 0);
-    error_check(s, "socket created");
+    error_check(s, "socket created!");
 
     // 2. Bind the socket to the server address
     struct sockaddr_in server_address = create_socket_address();
     int b = bind(s, (struct sockaddr *)&server_address, sizeof(server_address));
-    error_check(b, "binding successful");
+    error_check(b, "binding successful!");
 
     // 3. Communication with client
     struct sockaddr_in client_address;
@@ -65,49 +67,61 @@ int main()
     int expected_seq = 0;
     int packets_received = 0;
 
+    int buffer[WINDOW_SIZE + 1] = {0};
+    Packet packet_buffer[WINDOW_SIZE + 1];
+
     // Loss simulation counters
-    int drop_3 = 1;
-    int drop_5 = 1;
+    int drop_counter_3 = 1;
+    int drop_counter_5 = 1;
 
     while (packets_received < NUM_PACKETS)
     {
         Packet packet;
-        int status = recvfrom(s, &packet, sizeof(packet), 0, (struct sockaddr *)&client_address, &client_len);
 
+        int status = recvfrom(s, &packet, sizeof(packet), 0, (struct sockaddr *)&client_address, &client_len);
         if (status > 0)
         {
-            printf("\nReceived data %d (seq_num = %d)\n", packet.data, packet.seq_num);
+            printf("\nReceived Data %d (seq_num = %d)\n", packet.data, packet.seq_num);
 
             // Simulate packet loss
-            if (packet.data == 3 && drop_3 > 0)
+            if (packet.data == 3 && drop_counter_3 > 0)
             {
                 printf(">>> Simulating packet loss for data 3\n");
-                drop_3--;
+                drop_counter_3--;
                 continue;
             }
-            else if (packet.data == 5 && drop_5 > 0)
+            else if (packet.data == 5 && drop_counter_5 > 0)
             {
                 printf(">>> Simulating packet loss for data 5\n");
-                drop_5--;
+                drop_counter_5--;
                 continue;
             }
 
-            if (packet.seq_num == expected_seq)
+            ACK ack;
+            ack.ack_num = packet.seq_num;
+            status = sendto(s, &ack, sizeof(ack), 0, (struct sockaddr *)&client_address, client_len);
+            if (status > 0)
             {
-                printf("Packet accepted (data = %d, seq_num = %d)\n", packet.data, packet.seq_num);
-                packets_received++;
+                printf("ACK sent for Data %d (ack_num = %d)\n", packet.data, ack.ack_num);
+            }
 
-                // Send ACK
-                ACK ack;
-                ack.ack_num = packet.seq_num;
-
-                status = sendto(s, &ack, sizeof(ack), 0, (struct sockaddr *)&client_address, client_len);
-                if (status > 0)
+            if (packet.seq_num >= expected_seq && packet.seq_num < expected_seq + WINDOW_SIZE)
+            {
+                if (!buffer[packet.seq_num])
                 {
-                    printf("ACK sent for data %d (ack_num = %d)\n", packet.data, ack.ack_num);
+                    buffer[packet.seq_num] = 1;
+                    packet_buffer[packet.seq_num] = packet;
+                    printf("Packet Buffered (data = %d, seq_num = %d)\n", packet.data, packet.seq_num);
                 }
 
-                expected_seq = 1 - expected_seq;
+                while (buffer[expected_seq])
+                {
+                    printf("Packet Delivered (data = %d, seq_num = %d)\n",
+                           packet_buffer[expected_seq].data, expected_seq);
+                    packets_received++;
+                    buffer[expected_seq] = 0;
+                    expected_seq = (expected_seq + 1) % (WINDOW_SIZE + 1);
+                }
             }
         }
     }
