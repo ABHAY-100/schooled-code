@@ -48,8 +48,7 @@ char* read_file()
 
     sprintf(c, "Filename: sample.txt\n\n");
 
-    size_t bytes_read = fread(c + strlen(c), 1, 4095 - strlen(c), f);
-    c[strlen(c) + bytes_read] = '\0';
+    fread(c + strlen(c), 1, 4095 - strlen(c), f);
     
     fclose(f);
 
