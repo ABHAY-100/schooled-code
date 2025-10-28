@@ -95,18 +95,8 @@ int main()
             }
             else if (ack.ack_num == packet.seq_num)
             {
-<<<<<<< HEAD
-                printf("ACK received for data %d (seq_num = %d)\n", packet.data, ack.ack_num);
-                ack_received = 1;
-            }
-            else
-            {
-                printf("Wrong ACK received (expected %d, got %d). Retransmitting...\n",packet.seq_num, ack.ack_num);
-                retries++;
-=======
                 printf("ACK received for Data %d\n", packet.data);
                 wanna_stop = 1;
->>>>>>> d90973d112466396546993202f58408d1f94b91b
             }
         }
 
