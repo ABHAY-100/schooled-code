@@ -1,8 +1,8 @@
 import string
 
 def analyze_file(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        text = f.read()
+    f = open(path, 'r', encoding='utf-8')
+    text = f.read()
     words = len(text.split())
     sentences = sum(text.count(s) for s in '.!?')
     upper = sum(1 for c in text if c.isupper())
