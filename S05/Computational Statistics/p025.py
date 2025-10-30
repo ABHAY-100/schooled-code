@@ -7,6 +7,9 @@ A = np.array(input(f"Enter {rows*cols} numbers (separated by spaces): ").split()
 
 eigenvalues, eigenvectors = np.linalg.eig(A)
 
-print("Eigenvalues: ", eigenvalues)
+print("Eigenvalues:", eigenvalues)
+print("Eigenvectors:\n", eigenvectors)
 
-print("Eigenvectors: ", eigenvectors)
+for i, val in enumerate(eigenvalues):
+    v = eigenvectors[:, i]
+    print(f"\nEigenvalue {val}: Verified =", np.allclose(A @ v, val * v))
