@@ -70,9 +70,8 @@ int main()
         packet.data = i;
 
         int retries = 0;
-        int wanna_stop = 0;
 
-        while (!wanna_stop && retries < MAX_RETRIES)
+        while (retries < MAX_RETRIES)
         {
             // Send
             printf("Sending Data %d (seq_num = %d, attempt %d)\n", packet.data, packet.seq_num, retries + 1);
@@ -96,14 +95,8 @@ int main()
             else if (ack.ack_num == packet.seq_num)
             {
                 printf("ACK received for Data %d\n", packet.data);
-                wanna_stop = 1;
+                break;
             }
-        }
-
-        if (!wanna_stop)
-        {
-            printf("Failed to receive ACK for data %d after %d retries.\n", packet.data, MAX_RETRIES);
-            break;
         }
     }
 
