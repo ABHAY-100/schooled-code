@@ -115,19 +115,6 @@ int main()
                 retries = 0;
                 base++;
             }
-            else
-            {
-                printf("Unexpected ACK! Going Back...\n");
-                retries++;
-
-                if (retries >= MAX_RETRIES)
-                {
-                    printf("Failed after %d retries.\n", MAX_RETRIES);
-                    break;
-                }
-
-                next_seq = base;
-            }
         }
     }
 
