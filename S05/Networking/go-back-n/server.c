@@ -11,9 +11,9 @@
 #define BUFFER_SIZE 256
 #define LOCALHOST "127.0.0.1"
 
-#define NUM_PACKETS 5
-
 #define WINDOW_SIZE 3
+
+#define NUM_PACKETS 5
 
 typedef struct
 {
@@ -68,8 +68,8 @@ int main()
     int packets_received = 0;
 
     // Loss simulation counters
-    int drop_counter_3 = 1;
-    int drop_counter_5 = 1;
+    int drop_3 = 1;
+    int drop_5 = 1;
 
     while (packets_received < NUM_PACKETS)
     {
@@ -78,25 +78,23 @@ int main()
         int status = recvfrom(s, &packet, sizeof(packet), 0, (struct sockaddr *)&client_address, &client_len);
         if (status > 0)
         {
-            printf("\nReceived Data %d (seq_num = %d)\n", packet.data, packet.seq_num);
-
             // Simulate packet loss
-            if (packet.data == 3 && drop_counter_3 > 0)
+            if (packet.data == 3 && drop_3 > 0)
             {
                 printf(">>> Simulating packet loss for data 3\n");
-                drop_counter_3--;
+                drop_3--;
                 continue;
             }
-            else if (packet.data == 5 && drop_counter_5 > 0)
+            else if (packet.data == 5 && drop_5 > 0)
             {
                 printf(">>> Simulating packet loss for data 5\n");
-                drop_counter_5--;
+                drop_5--;
                 continue;
             }
 
             if (packet.seq_num == expected_seq)
             {
-                printf("Packet Accepted (data = %d, seq_num = %d)\n", packet.data, packet.seq_num);
+                printf("Packet accepted (data = %d, seq_num = %d)\n", packet.data, packet.seq_num);
                 packets_received++;
 
                 // Send ACK
@@ -106,10 +104,10 @@ int main()
                 status = sendto(s, &ack, sizeof(ack), 0, (struct sockaddr *)&client_address, client_len);
                 if (status > 0)
                 {
-                    printf("ACK sent for Data %d (ack_num = %d)\n", packet.data, ack.ack_num);
+                    printf("ACK sent for data %d\n", packet.data);
                 }
 
-                expected_seq = (expected_seq + 1) % (WINDOW_SIZE + 1);
+                expected_seq = (expected_seq+1)%(WINDOW_SIZE+1);
             }
         }
     }
