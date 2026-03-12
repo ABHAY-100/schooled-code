@@ -1,34 +1,24 @@
-MOD = 26
+import numpy as np
 
-def c2n(c): return ord(c) - 65
-def n2c(n): return chr(n + 65)
+key = np.array([[3, 3], [2, 5]])
 
-def inv(a):
-    for i in range(26):
-        if (a*i) % 26 == 1:
-            return i
+plaintxt = input("Plain Text: ").upper().replace(" ", "")
 
-def mat_inv(k):
-    d = (k[0][0]*k[1][1] - k[0][1]*k[1][0]) % 26
-    i = inv(d)
-    return [[ k[1][1]*i % 26, -k[0][1]*i % 26],
-            [-k[1][0]*i % 26,  k[0][0]*i % 26]]
 
-def hill(text, key):
-    text = text.upper().replace(" ", "")
-    if len(text) % 2: text += 'X'
-    out = ""
+def encrypt(text):
+    cyphertxt = ""
+
+    if len(text) % 2 != 0:
+        text += "X"
+
     for i in range(0, len(text), 2):
-        a, b = c2n(text[i]), c2n(text[i+1])
-        out += n2c((key[0][0]*a + key[0][1]*b) % 26)
-        out += n2c((key[1][0]*a + key[1][1]*b) % 26)
-    return out
+        pair = np.array([ord(text[i]) - 65, ord(text[i + 1]) - 65])
 
-key = [[3,3],[2,5]]
-msg = input("Enter word: ")
+        enc = np.dot(key, pair) % 26
 
-cipher = hill(msg, key)
-plain  = hill(cipher, mat_inv(key))
+        cyphertxt += chr(enc[0] + 65) + chr(enc[1] + 65)
 
-print("Ciphertext:", cipher)
-print("Decrypted :", plain)
+    print(cyphertxt)
+
+
+encrypt(plaintxt)
