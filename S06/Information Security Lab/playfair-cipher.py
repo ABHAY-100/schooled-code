@@ -21,7 +21,7 @@ i = 0
 
 while i < len(text):
     a = text[i]
-    b = text[i+1] if i+1 < len(text) else 'X'
+    b = text[i+1]
 
     if a == b:
         pairs.append(a + 'X')
