@@ -13,15 +13,17 @@ matrix = np.array(list(k)).reshape(5, 5)
 
 text = input("Plain Text: ").upper().replace('J', 'I').replace(" ", "")
 
-if len(text)%2 != 0:
-    text += 'X'
-
 pairs = []
 i = 0
 
 while i < len(text):
     a = text[i]
     b = text[i+1]
+
+    if i + 1 < len(text):
+        b = text[i+1]
+    else:
+        b = 'X'
 
     if a == b:
         pairs.append(a + 'X')
